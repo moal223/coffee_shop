@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop</title>
+    <link href="./css/style.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-bottom: 5px;
+        color: #555;
+      }
+      input,
+      textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      textarea {
+        resize: vertical;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #c08e25;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #fff;
+        color: #c08e25;
+        border: 1px solid #c08e25;
+      }
+      .contact-info {
+        margin-top: 30px;
+        text-align: center;
+      }
+      .contact-info p {
+        margin: 5px 0;
+        color: #555;
+      }
+      .map {
+        margin-top: 30px;
+        text-align: center;
+      }
+      .map iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="menu" class="menu hide">
+      <div class="close-cont"><span id="close">X</span></div>
+      <div class="menu-list">
+        <ul class="services">
+          <li>Vending machines</li>
+          <li>Office coffee</li>
+          <li>Commercial</li>
+          <li>Mocro Market</li>
+          <li>All solutions</li>
+        </ul>
+        <ul class="services2">
+          <li>Our Services</li>
+          <li>Digital Solutions</li>
+          <li>Contact Us</li>
+          <li>Investors</li>
+          <li>About Us</li>
+        </ul>
+      </div>
+    </div>
+    <!-- start header -->
+    <header>
+      <div class="sh-menu-block">
+        <div id="show-menu" class="menu-btn">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="lng">
+          <svg
+            width="21"
+            height="20"
+            viewBox="0 0 21 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.713 15.747C19.5324 14.6635 20.1152 13.4307 20.4262 12.1233C20.7372 10.816 20.7699 9.46128 20.5222 8.14137C20.2746 6.82146 19.7518 5.56383 18.9855 4.44474C18.2193 3.32565 17.2255 2.36841 16.0645 1.63105C14.9035 0.893683 13.5994 0.391562 12.2314 0.155118C10.8633 -0.0813254 9.45974 -0.0471624 8.10577 0.255537C6.75179 0.558237 5.47562 1.12316 4.3546 1.91607C3.23359 2.70898 2.2911 3.71336 1.58427 4.8683L1.53936 4.91165C1.52107 4.94023 1.50805 4.97165 1.50087 5.00452C0.468291 6.63166 -0.0517481 8.5135 0.00406431 10.4208C0.0598768 12.3281 0.689126 14.1786 1.81521 15.747C1.81521 15.747 1.81521 15.747 1.81521 15.7841C2.75861 17.0816 4.01082 18.1416 5.46666 18.8752C6.92251 19.6088 8.53949 19.9945 10.1818 19.9999C11.8241 20.0054 13.4438 19.6304 14.9048 18.9065C16.3659 18.1827 17.6256 17.131 18.5783 15.8398C18.6074 15.8117 18.6332 15.7805 18.6552 15.747H18.713ZM17.9624 14.5829C16.7106 13.8913 15.3656 13.3704 13.9657 13.035C14.0713 12.0663 14.1249 11.0929 14.1261 10.1188C14.1261 9.34484 14.0876 8.56469 14.0234 7.80931C15.5061 7.44955 16.9246 6.87773 18.2319 6.11282C18.9491 7.42678 19.3013 8.89771 19.254 10.3822C19.2068 11.8666 18.7618 13.3139 17.9624 14.5829ZM10.2641 18.787C9.5071 18.787 8.49992 17.0038 8.00594 14.0133C9.49279 13.7767 11.0098 13.7767 12.4966 14.0133C12.0283 16.9853 11.0211 18.787 10.2641 18.787ZM10.2641 12.5954C9.45177 12.5968 8.64085 12.661 7.83914 12.7874C7.74384 11.9008 7.69673 11.0101 7.698 10.1188C7.698 9.39437 7.73008 8.71329 7.7814 8.06317C8.60195 8.1947 9.43231 8.26097 10.2641 8.26131C11.0958 8.25786 11.9259 8.19162 12.7468 8.06317C12.7981 8.68233 12.8302 9.39437 12.8302 10.1188C12.8315 11.0101 12.7844 11.9008 12.6891 12.7874C11.8874 12.661 11.0764 12.5968 10.2641 12.5954ZM10.2641 1.45054C11.0724 1.45054 12.1887 3.469 12.6121 6.82485C11.0587 7.08903 9.46947 7.08903 7.91612 6.82485C8.33952 3.469 9.45578 1.45054 10.2641 1.45054ZM17.5454 5.06025C16.4041 5.73049 15.1681 6.23729 13.8759 6.5648C13.7053 4.86792 13.2001 3.21817 12.3876 1.7044C14.4661 2.19433 16.2952 3.38437 17.5454 5.06025ZM8.14066 1.7044C7.32809 3.21817 6.82291 4.86792 6.65231 6.5648C5.36015 6.23729 4.12409 5.73049 2.98279 5.06025C4.23301 3.38437 6.06208 2.19433 8.14066 1.7044ZM2.30919 6.11282C3.61648 6.87773 5.03498 7.44955 6.5176 7.80931C6.45344 8.57088 6.41495 9.34484 6.41495 10.1188C6.41617 11.0929 6.4697 12.0663 6.57533 13.035C5.17542 13.3704 3.83039 13.8913 2.57862 14.5829C1.77923 13.3139 1.33424 11.8666 1.28702 10.3822C1.2398 8.89771 1.59197 7.42678 2.30919 6.11282ZM3.31639 15.6045C4.3933 15.0126 5.54764 14.5627 6.74854 14.2672C6.94404 15.7582 7.41558 17.2031 8.14066 18.5332C6.24578 18.0883 4.5524 17.0604 3.31639 15.6045ZM12.3876 18.5332C13.1126 17.2031 13.5842 15.7582 13.7797 14.2672C14.9806 14.5627 16.1349 15.0126 17.2118 15.6045C15.9758 17.0604 14.2824 18.0883 12.3876 18.5332Z"
+              fill="#13100A"
+            ></path>
+          </svg>
+          <span>EN</span>
+        </div>
+      </div>
+      <div class="logo"><a href="./index.html">Coffee Shop</a></div>
+      <div class="contact-btn">
+        <a>Contact Us</a>
+      </div>
+    </header>
+    <!-- end header -->
+    <div class="container">
+      <h1>Contact Us</h1>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+      <div class="contact-info">
+        <p>Address: Palm Street, Riyadh, Saudi Arabia</p>
+        <p>Phone: +000 0000 0000</p>
+        <p>Email: info@coffeeshop.com</p>
+      </div>
+      <div class="map">
+        <h2>Our Location</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.169109530053!2d106.70354121537823!3d10.77689579232198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292cf1e5df%3A0x8e86885bb8b79d90!2sBitexco%20Financial%20Tower!5e0!3m2!1sen!2s!4v1590176895266!5m2!1sen!2s"
+          frameborder="0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
