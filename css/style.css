@@ -115,19 +115,55 @@ header .contact-btn a:hover {
   border: 2px solid #c08e25;
 }
 /* end contact */
+@media (max-width: 1000px) {
+  header .sh-menu-block .lng {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  header .logo {
+    display: none;
+  }
+  header {
+    padding: 30px 80px;
+  }
+  main .container-cards {
+    padding: 10px 80px !important;
+  }
+}
+@media (max-width: 750px) {
+  main .container-cards {
+    padding: 10px 30px !important;
+  }
+  main .cont-card {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  main .cont-card .card {
+    width: auto;
+  }
+}
+@media (max-width: 800px) {
+  .menu-list {
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  .menu-list ul li {
+    font-size: 16px;
+  }
+}
 /* end header */
 
 /* start main */
+
 main .container-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
   padding: 10px 150px;
   margin-bottom: 80px;
 }
 main .cont-card {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 main .card {
   background-color: #f6f1e3;
@@ -139,6 +175,12 @@ main .card {
   border-radius: 6px;
   border: 0px solid #c08e25;
   transition: 0.3s;
+}
+
+@media (max-width: 1200px) {
+  main .cont-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 main .card:hover {
   border: 2px solid #c08e25;
